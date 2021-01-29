@@ -1,3 +1,5 @@
+@import url("./reset.css");
+
 /* GLOBAL RULES */
 :root {
   --black: #000;
@@ -18,7 +20,7 @@ body {
   text-decoration: none;
 }
 .container {
-  width: 1300px;
+  width: 1200px;
   margin: 20px auto;
 }
 
@@ -29,18 +31,21 @@ h1 {
   line-height: 120%;
 }
 
-h2 {
-  font-family: Tripsans-med;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 120%;
-}
+h2,
 h3 {
   font-family: Tripsans-med;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 32px;
   color: var(--black);
+  font-weight: bold;
+}
+h2 {
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.6px;
+  font-weight: bold;
+}
+h3 {
+  line-height: 40px;
 }
 h4 {
   font-family: Tripsans-med;
@@ -91,6 +96,13 @@ header a {
 }
 header nav span {
   margin-right: 20px;
+  padding: 7px;
+  box-sizing: border-box;
+}
+header nav span:not(:last-child):hover {
+  border: 1px var(--light-grey) solid;
+  border-radius: 5px;
+  cursor: pointer;
 }
 header nav .button a {
   padding: 10px 20px;
@@ -119,31 +131,32 @@ main h1 .text-orange {
   display: flex;
   margin-top: 40px;
 }
-.sub-menu span a {
+.sub-menu div a {
   font-family: "Tripsans-med";
   font-size: 16px;
   color: var(--black);
   text-decoration: none;
   line-height: 120%;
 }
-.sub-menu span {
-  padding: 15px 20px;
+.sub-menu div {
+  padding: 10px 10px;
   border: solid 1px var(--black);
   border-radius: 10px;
   margin: 0 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
 }
-.sub-menu span:hover {
+.sub-menu div:hover {
   background-color: #000;
   cursor: pointer;
 }
-.sub-menu span:hover > a {
+.sub-menu div:hover > a {
   color: #fff;
 }
-.sub-menu span:hover > i {
+.sub-menu div:hover > i {
   color: #fff;
 }
 
@@ -173,7 +186,7 @@ main .pictures .col-2 {
 }
 main .pictures .col-2 img {
   width: 100%;
-  height: (50% - 1px);
+  height: calc(50% - 1px);
   object-fit: cover;
   object-position: center;
   overflow: hidden;
@@ -183,11 +196,32 @@ main .pictures .col-2 img:first-child {
   margin-bottom: 2px;
 }
 
-/*intersection*/
-.intersection {
-  display: flex;
+.line {
   justify-content: space-between;
   margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.line > div:first-child {
+  display: flex;
+}
+.line i {
+  margin-left: 6px;
+}
+.line > div:first-child > span:nth-child(even) {
+  margin: 0 6px;
+}
+.line > div:first-child > span:nth-child(odd):hover {
+  color: grey;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.line > div:first-child > div:hover {
+  color: grey;
+  cursor: pointer;
+}
+.line > div:first-child > div span:hover {
+  text-decoration: underline;
 }
 
 /* town description*/
@@ -195,53 +229,59 @@ main .pictures .col-2 img:first-child {
   margin-top: 40px;
   display: flex;
 }
-.more-description {
-  float: 1px;
+.town-description .col-1 {
   width: 50%;
-  padding-right: 80px;
 }
-.organize-trip {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.organize-trip .purple-box {
-  background-color: #ff5d5d;
-  border-radius: 15px;
-  padding: 40px;
-}
-
-.organize-trip > img {
-  height: 200px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 15px;
-}
-
-.organize-trip div {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.connect-button a {
-  margin-top: 10px;
-  padding: 10px 30px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 20px;
-  color: #fff;
-  line-height: 124%;
-  margin-right: 300px;
-  text-decoration: none;
-}
-.more-description p {
+.town-description .col-1 p {
+  font-family: Georgia, "Times New Roman", Times, serif;
   margin-top: 20px;
   font-weight: 400;
-  font-size: 21px;
-  color: #333;
+  font-size: 20px;
+  line-height: 24px;
+  color: #474747;
 }
-.organize-trip p {
+.town-description .col-2 {
+  display: flex;
+  flex-direction: column;
+  width: calc(50%-80px);
+  margin-left: 80px;
+}
+.town-description .col-2 div:first-child {
+  background-color: #ff5d5d;
+  height: calc(100%-234px);
+  padding: 30px;
+  box-sizing: border-box;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.town-description .col-2 > div:last-child {
+  background-image: url("../img/image_trips_card_medium.png");
+  height: 200px;
+  object-fit: cover;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.town-description .col-2 div {
+  display: flex;
+  flex-direction: column;
+}
+
+.town-description .col-2 button {
   margin-top: 10px;
+  background-color: #000;
+  color: #fff;
+  width: 155px;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  border-radius: 10px;
+}
+
+.town-description .col-2 p {
+  margin: 10px 0 20px 0;
   font-weight: 400;
   font-size: 18px;
 }
@@ -249,17 +289,18 @@ main .pictures .col-2 img:first-child {
 /* Travel advice */
 /* ------------------------------------ */
 /* section separator */
-.section-separator {
+.title {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
-.section-separator hr {
-  flex: 3;
+.title hr {
+  flex: 1;
 }
-.section-separator h3 {
-  flex: 2;
+.title h2 {
   text-align: center;
+  margin: 0 20px;
 }
 /* end section separator */
 
@@ -271,30 +312,28 @@ main .pictures .col-2 img:first-child {
   text-align: center;
 }
 
-.travel-advice .section-separator:first-child {
-}
-.travel-advice .section-separator:last-child {
-}
 .travel-advice span {
   display: flex;
   justify-content: flex-end;
 }
 
 .travel-advice .travel-advice-items {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
 }
 .travel-advice .travel-advice-items div {
   border: 1px var(--light-grey) solid;
   border-radius: 10px;
-  padding: 12px 30px;
-  flex: 1;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  width: calc(25% - 20px);
   display: flex;
   align-items: center;
 }
 .travel-advice .travel-advice-items div:hover {
   cursor: pointer;
+  outline: none;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8);
 }
 .travel-advice .travel-advice-items div:not(:last-child) {
@@ -341,53 +380,41 @@ main .pictures .col-2 img:first-child {
   color: var(--primary-link);
 }
 .unmissable {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .unmissable-pictures {
   display: flex;
 }
 .unmissable-pictures .unmissable-pictures-aside {
-  flex: 1;
-  width: 100%;
+  width: 25%;
 }
 .unmissable-pictures-aside {
-  margin-right: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
 }
 .unmissable-pictures .carousel {
   flex-direction: row;
-
-  flex: 3;
+  width: 75%;
   display: flex;
   overflow: hidden;
   overflow-x: scroll;
-  width: 100%;
-}
-
-.unmissable-pictures .carousel {
-  display: flex;
   flex-direction: row;
 }
-.unmissable-pictures .carousel div {
-  margin-right: 5px;
+.unmissable-pictures .carousel > div div {
+  width: 280px;
 }
-.unmissable-pictures .carousel div div img {
+
+.unmissable-pictures .carousel > div:not(:last-child) {
+  margin-right: 20px;
+}
+.unmissable-pictures .carousel > div img {
   object-fit: cover;
   object-position: center;
-  height: 250px;
-  width: 315px;
-}
-.unmissable-pictures .carousel div div img {
-  object-fit: cover;
-  object-position: center;
-  height: 250px;
-  width: 315px;
-}
-.unmissable-pictures .carousel div div img {
-  object-fit: cover;
-  object-position: center;
-  height: 250px;
-  width: 315px;
+  /* height: 100%; */
+  height: 206px;
+  width: 100%;
+  /* display: none; */
 }
 
 .unmissable-pictures .carousel div div:first-child {
@@ -413,6 +440,7 @@ main .pictures .col-2 img:first-child {
   color: var(--primary-link);
   margin-top: 8px;
   margin-bottom: 8px;
+  box-sizing: border-box;
 }
 .unmissable-pictures .carousel div i {
   color: var(--rate-green);

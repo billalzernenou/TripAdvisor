@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/responsive.css">
     <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/8cac12dea5.js"
@@ -25,9 +25,9 @@
         <input type="text" placeholder="Search.." />
       </div>
       <nav class="main-menu">
-        <span><i class="fas fa-plus-circle"></i> <a href="">Publier</a></span>
-        <span> <i class="far fa-bell"></i> <a href="">Alertes</a></span>
-        <span><i class="far fa-heart"></i> <a href="">Voyages</a></span>
+        <span><i class="fas fa-plus-circle"></i> <a class="hidden-md" href="">Publier</a></span>
+        <span> <i class="far fa-bell"></i> <a class="hidden-md"  href="">Alertes</a></span>
+        <span><i class="far fa-heart"></i> <a class="hidden-md"  href="">Voyages</a></span>
         <span class="button"><a href="">Connectez-vous</a></span>
       </nav>
     </header>
@@ -35,22 +35,25 @@
     <main class="container">
       <h1><span class="text-orange">Explorer </span>Paris</h1>
       <nav class="sub-menu">
-        <span>
+        <div>
           <a href="">Conseils de voyage</a> <i class="far fa-flag"></i>
-        </span>
-        <span> <a href="">Hôtels</a><i class="fas fa-bed"></i></span>
-        <span>
+        </div>
+        <div> <a href="">Hôtels</a><i class="fas fa-bed"></i></div>
+        <div>
           <a href="">Locations de vacances</a><i class="fas fa-house-user"></i
-        ></span>
-        <span> <a href="">Activités</a><i class="fas fa-house-user"></i></span>
-        <span> <a href="">Réstaurant</a><i class="fas fa-utensils"></i></span>
-        <span>
+        ></div>
+        <div> <a href="">Activités</a><i class="fas fa-house-user"></i></div>
+        <div> <a href="">Réstaurant</a><i class="fas fa-utensils"></i></div>
+        <div>
           <a href="">Forums de voyage</a><i class="far fa-sticky-note"></i
-        ></span>
-        <span>
+        ></div>
+        <div>
+          <a href="">Vols</a><i class="far fa-sticky-note"></i
+        ></div>
+        <div>
           <a href="">Plus</a>
           <i class="fal fa-info"></i
-        ></span>
+        ></div>
       </nav>
       <!-- Pictures -->
       <div class="pictures">
@@ -63,14 +66,20 @@
         </div>
       </div>
 
-      <div class="intersection">
-        <p>Europe > France > Île-de-France > Paris</p>
-        <p>visiter :Paris</p>
+      <div class="line">
+        <div>
+        <span>Europe</span><span>></span><span>France</span><span>></span>
+        <span>Île-de-France</span><span>></span>
+        <div>
+          <span>Paris</span><i class="fas fa-caret-down"></i>
+        </div>
+        </div>
+        <div>Visiter : Paris</div>
       </div>
       <!-- TOWN DESCRIPTION -->
-      <section class="town-description">
-        <div class="more-description">
-          <h2>La Ville Lumière éblouit en tous points</h2>
+      <div class="town-description">
+        <div class="col-1">
+          <h3>La Ville Lumière éblouit en tous points</h3>
           <p>
             Aucun autre endroit au monde ne fait autant rêver que Paris. La
             ville séduit par son art, son architecture, sa culture et sa
@@ -82,27 +91,28 @@
           </p>
         </div>
 
-        <div class="organize-trip">
-          <div class="purple-box">
+        <div class="col-2">
+          <div>
             <h3>Paris: commencez à organiser !</h3>
             <p>
               Créez un voyage pour enregistrer et organiser toutes vos idées et
               les visualiser sur une carte.
             </p>
-            <div class="connect-button"><a href="">Créez un voyage</a></div>
+            <button >Créez un voyage</button>
           </div>
-
-          <img src="./img/image_trips_card_medium.png" alt="map paris" />
+          <div>
+            
+          </div>
         </div>
-      </section>
+      </div>
       <!-- ---------------------- -->
       <!-- Travel advice-->
       <!-- ---------------------- -->
       <section class="travel-advice">
-        <div class="section-separator">
-          <hr />
-          <h3>Conseils de voyage</h3>
-          <hr />
+        <div class="title">
+          <hr>
+          <h2>Conseils de voyage</h2>
+          <hr>
         </div>
 
         <span><a href="#"> Tout afficher</a></span>
@@ -130,7 +140,7 @@
       <!-- unmissable-->
       <!-- ---------------------- -->
       <section class="unmissable">
-        <div class="section-separator">
+        <div class="title">
           <hr />
           <h3>Immanquable à Paris</h3>
           <hr />

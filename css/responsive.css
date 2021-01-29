@@ -1,0 +1,101 @@
+/* 
+----------------------------------- 
+MEDIA QUERIES
+----------------------------------- 
+*/
+
+@media (max-width: 1328px) {
+  .hidden-md {
+    display: inherit;
+  }
+  .container {
+    width: 100%;
+  }
+  .sub-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* GLOBAL */
+  .container {
+    width: 100%;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  /* HEADER */
+  .hidden-md {
+    display: none;
+  }
+
+  .sub-menu > div {
+    width: calc(25% - (25px / 4));
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .sub-menu {
+    flex-wrap: wrap;
+  }
+  header nav .button a {
+    display: none;
+  }
+  header input {
+    display: none;
+  }
+
+  /* PICTURES */
+
+  .pictures .col-2 {
+    display: none;
+  }
+
+  /* Town-Description*/
+  .town-description {
+    flex-wrap: wrap;
+  }
+  .town-description .col-1 {
+    width: 100%;
+    margin: 0 20px;
+  }
+  .town-description h3 {
+    font-size: 26px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+  .town-description p {
+    margin: 15px 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .town-description .col-2 {
+    width: 100%;
+    margin: 0 20px;
+  }
+  .travel-advice .travel-advice-items {
+    flex-wrap: wrap;
+  }
+  .travel-advice .travel-advice-items div {
+    width: calc(40%);
+    margin-right: 20px;
+    margin-top: 5px;
+  }
+  /* unmissable */
+  .unmissable-pictures {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  .unmissable-pictures .unmissable-pictures-aside {
+    width: 100%;
+  }
+  .unmissable-pictures .carousel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+}
