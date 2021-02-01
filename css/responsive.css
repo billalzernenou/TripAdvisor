@@ -52,6 +52,9 @@ MEDIA QUERIES
   .pictures .col-2 {
     display: none;
   }
+  main .pictures {
+    height: 280px;
+  }
 
   /* Town-Description*/
   .town-description {
@@ -95,7 +98,22 @@ MEDIA QUERIES
   .unmissable-pictures .carousel {
     width: 100%;
   }
+  /* ----------------------------------- */
+  /* TRAVEL GUIDE  */
+  /* -------------------------------------- */
+  .travel-guide {
+    display: inherit;
+  }
 }
 
 @media (max-width: 768px) {
+  header {
+    display: inherit;
+  }
+  .main-menu {
+    display: none;
+  }
+  Header .logo > i {
+    display: flex;
+  }
 }

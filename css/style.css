@@ -20,8 +20,10 @@ body {
   text-decoration: none;
 }
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 20px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -84,6 +86,11 @@ header img {
 
 header .logo {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo i {
+  display: none;
 }
 
 header a {
@@ -104,12 +111,14 @@ header nav span:not(:last-child):hover {
   border-radius: 5px;
   cursor: pointer;
 }
-header nav .button a {
+header nav .button p {
   padding: 10px 20px;
   background-color: var(--black);
   border-radius: 20px;
   color: #fff;
   line-height: 124%;
+  display: inline;
+  cursor: pointer;
 }
 header nav i {
   color: var(--light-grey);
@@ -166,12 +175,12 @@ main .pictures {
   margin-top: 30px;
   height: 460px;
 }
-main .pictures .col-1 {
+.pictures .col-1 {
   /* width: 45%;
   height: 100%; */
   flex: 6;
 }
-main .pictures .col-1 img {
+.pictures .col-1 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -179,12 +188,12 @@ main .pictures .col-1 img {
   border-radius: 10px 0 0 10px;
 }
 
-main .pictures .col-2 {
+.pictures .col-2 {
   flex: 4;
   display: flex;
   flex-direction: column;
 }
-main .pictures .col-2 img {
+.pictures .col-2 img {
   width: 100%;
   height: calc(50% - 1px);
   object-fit: cover;
@@ -192,10 +201,9 @@ main .pictures .col-2 img {
   overflow: hidden;
   border-radius: 0 10px 10px 0;
 }
-main .pictures .col-2 img:first-child {
+.pictures .col-2 img:first-child {
   margin-bottom: 2px;
 }
-
 .line {
   justify-content: space-between;
   margin-top: 10px;
@@ -447,6 +455,62 @@ main .pictures .col-2 img:first-child {
 }
 
 /* --------------------------------- */
+/* TRAVEL GUIDE */
+/* ------------------------------ */
+.travel-guide {
+  display: flex;
+}
+.travel-guide > div {
+  height: 520px;
+  width: calc(100% - 20px / 2);
+  background-color: #faf1ed;
+}
+.travel-guide > div:not(:last-child) {
+  margin-right: 10px;
+}
+.travel-guide > div > div {
+  position: relative;
+}
+.travel-guide > div > div .caption {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.travel-guide > div > div .icon {
+  position: absolute;
+  width: 4em;
+  border-radius: 50%;
+  bottom: -5px;
+
+  object-fit: cover;
+  object-position: center;
+}
+.travel-guide > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.travel-guide > div > div p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.travel-guide > div > div h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.travel-guide > div > div h5 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.travel-guide > div > div i {
+  color: #ff5d5d;
+}
+.travel-guide > div > div a {
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* --------------------------------- */
 /* FOOTER */
 /* ------------------------------ */
 
@@ -461,4 +525,77 @@ footer img {
 }
 footer p {
   margin-left: 10px;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 120%;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+/* ------------------------------- */
+/* contact form  */
+/* ------------------------------- */
+.contact-form {
+  /* position: fixed; */
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  /* position: fixed; */
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+}
+form {
+  background-color: #fff;
+  width: 30vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: grey 1px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-top: 100px;
+}
+form input,
+textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: grey 1px solid;
+  border-radius: 10px;
+  outline: none;
+}
+form input[type="submit"] {
+  background-color: #7359dc;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hidden-form {
+  display: none;
+}
+.display-form {
+  display: flex;
+}
+.display-form h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 120%;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+.display-form i {
+  text-align: right;
+  cursor: pointer;
 }

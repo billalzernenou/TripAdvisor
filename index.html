@@ -6,54 +6,64 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/fonts.css" />
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="icon" href="./fv-icon.svg" />
     <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/8cac12dea5.js"
       crossorigin="anonymous"
     ></script>
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/main.js"></script>
+    <title>Tripadvisor</title>
   </head>
   <body>
     <!-- Header  -->
     <header class="container">
       <div class="logo">
+        <i class="fas fa-bars"></i>
         <img
           src="./img/Tripadvisor_lockup_horizontal_secondary_registered.svg"
           alt="TripAdvisor Logo"
         />
+        <i class="fas fa-search"></i>
         <input type="text" placeholder="Search.." />
       </div>
       <nav class="main-menu">
-        <span><i class="fas fa-plus-circle"></i> <a class="hidden-md" href="">Publier</a></span>
-        <span> <i class="far fa-bell"></i> <a class="hidden-md"  href="">Alertes</a></span>
-        <span><i class="far fa-heart"></i> <a class="hidden-md"  href="">Voyages</a></span>
-        <span class="button"><a href="">Connectez-vous</a></span>
+        <span
+          ><i class="fas fa-plus-circle"></i>
+          <a class="hidden-md" href="">Publier</a></span
+        >
+        <span>
+          <i class="far fa-bell"></i>
+          <a class="hidden-md" href="">Alertes</a></span
+        >
+        <span
+          ><i class="far fa-heart"></i>
+          <a class="hidden-md" href="">Voyages</a></span
+        >
+        <span id="contactez-nous" class="button"><p>contactez-vous</p></span>
       </nav>
     </header>
 
     <main class="container">
       <h1><span class="text-orange">Explorer </span>Paris</h1>
       <nav class="sub-menu">
+        <div><a href="">Conseils de voyage</a> <i class="far fa-flag"></i></div>
+        <div><a href="">Hôtels</a><i class="fas fa-bed"></i></div>
         <div>
-          <a href="">Conseils de voyage</a> <i class="far fa-flag"></i>
+          <a href="">Locations de vacances</a><i class="fas fa-house-user"></i>
         </div>
-        <div> <a href="">Hôtels</a><i class="fas fa-bed"></i></div>
+        <div><a href="">Activités</a><i class="fas fa-house-user"></i></div>
+        <div><a href="">Réstaurant</a><i class="fas fa-utensils"></i></div>
         <div>
-          <a href="">Locations de vacances</a><i class="fas fa-house-user"></i
-        ></div>
-        <div> <a href="">Activités</a><i class="fas fa-house-user"></i></div>
-        <div> <a href="">Réstaurant</a><i class="fas fa-utensils"></i></div>
-        <div>
-          <a href="">Forums de voyage</a><i class="far fa-sticky-note"></i
-        ></div>
-        <div>
-          <a href="">Vols</a><i class="far fa-sticky-note"></i
-        ></div>
+          <a href="">Forums de voyage</a><i class="far fa-sticky-note"></i>
+        </div>
+        <div><a href="">Vols</a><i class="far fa-sticky-note"></i></div>
         <div>
           <a href="">Plus</a>
-          <i class="fal fa-info"></i
-        ></div>
+          <i class="fal fa-info"></i>
+        </div>
       </nav>
       <!-- Pictures -->
       <div class="pictures">
@@ -68,11 +78,9 @@
 
       <div class="line">
         <div>
-        <span>Europe</span><span>></span><span>France</span><span>></span>
-        <span>Île-de-France</span><span>></span>
-        <div>
-          <span>Paris</span><i class="fas fa-caret-down"></i>
-        </div>
+          <span>Europe</span><span>></span><span>France</span><span>></span>
+          <span>Île-de-France</span><span>></span>
+          <div><span>Paris</span><i class="fas fa-caret-down"></i></div>
         </div>
         <div>Visiter : Paris</div>
       </div>
@@ -98,11 +106,9 @@
               Créez un voyage pour enregistrer et organiser toutes vos idées et
               les visualiser sur une carte.
             </p>
-            <button >Créez un voyage</button>
+            <button>Créez un voyage</button>
           </div>
-          <div>
-            
-          </div>
+          <div></div>
         </div>
       </div>
       <!-- ---------------------- -->
@@ -110,9 +116,9 @@
       <!-- ---------------------- -->
       <section class="travel-advice">
         <div class="title">
-          <hr>
+          <hr />
           <h2>Conseils de voyage</h2>
-          <hr>
+          <hr />
         </div>
 
         <span><a href="#"> Tout afficher</a></span>
@@ -222,7 +228,7 @@
                 <img src="./img/caption6.jpg" alt="" />
                 <span><i class="far fa-heart fa-1x"></i> </span>
               </div>
-              <h5>Cathédrale Notre-dame de Paris </h5>
+              <h5>Cathédrale Notre-dame de Paris</h5>
               <i class="fas fa-star"></i><i class="fas fa-star"></i
               ><i class="fas fa-star"></i><i class="fas fa-star"></i
               ><i class="fas fa-star-half"></i>
@@ -254,7 +260,7 @@
       <section class="unmissable">
         <div class="unmissable-pictures">
           <div class="unmissable-pictures-aside">
-            <h4>Se reposer</h4> 
+            <h4>Se reposer</h4>
             <p>Un mélange de charme, de symboles et de modernité.</p>
             <a href="#">Tout afficher</a>
           </div>
@@ -330,13 +336,11 @@
       <!-- ---------------------- -->
       <!-- unmissable 3-->
       <!-- ---------------------- -->
-
+      <section class="unmissable">
         <div class="unmissable-pictures">
           <div class="unmissable-pictures-aside">
             <h4>Se restaurer</h4>
-            <p>
-              Un mélange de charme, de symboles et de modernité.
-            </p>
+            <p>Un mélange de charme, de symboles et de modernité.</p>
             <a href="#">Tout afficher</a>
           </div>
           <div class="carousel">
@@ -364,7 +368,6 @@
                 <i class="fas fa-star"></i><i class="fas fa-star"></i
                 ><i class="fas fa-star"></i><i class="fas fa-star"></i
                 ><i class="fas fa-star-half"></i>
-               
               </div>
             </div>
             <div>
@@ -416,11 +419,91 @@
           </div>
         </div>
       </section>
+
+      <!-- -------------------------------- -->
+      <!-- TRAVELERS GUIDE  -->
+      <!-- -------------------------------- -->
+      <div class="section3">
+        <div class="title">
+          <hr />
+          <h2>Conseils de voyage</h2>
+          <hr />
+        </div>
+        <div class="travel-guide">
+          <div>
+            <div>
+              <img class="caption" src="./img/travel-guide1.jpg" alt="" />
+              <img class="icon" src="./img/guide-touriste1-1.jpg" alt="" />
+            </div>
+
+            <div>
+              <h5>Par Topito</h5>
+              <h4>Top 10 des choses à faire ou à voir dans le 14ème</h4>
+              <p>
+                Avec : Les Catacombes De Paris, Parc Montsouris, Le Tournesol
+                cafe, Fondation Cartier pour l'art contemporain, Gare
+              </p>
+              <i class="fas fa-heart"></i>
+              <a href="">10 articles</a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <img class="caption" src="./img/travel-guide2.jpg" alt="" />
+              <img class="icon" src="./img/guide-touriste1-2.jpg" alt="" />
+            </div>
+            <div>
+              <h5>Par Topito</h5>
+              <h4>Les 10 monuments et musées de Paris à faire.</h4>
+              <p>Guide du vrai touriste à Paris.</p>
+              <i class="fas fa-heart"></i>
+              <a href="">10 articles</a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <img class="caption" src="./img/travel-guide3.jpg" alt="" />
+              <img class="icon" src="./img/guide-touriste1-1.jpg" alt="" />
+            </div>
+            <div>
+              <h5>Par Topito</h5>
+              <h4>Best summer things to do in Paris | Eatwith</h4>
+              <p>
+                Eatwith host Elodie is a private tour guide in Paris, offering
+                all sorts of tours for small groups, from fashion to food. She's
+                been living in Paris for 16 years and loves welcoming travelers
+                to her maison!
+              </p>
+              <i class="fas fa-heart"></i>
+              <a href="">10 articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+    <div class="contact-form hidden-form">
+      <div class="form">
+        <form action="">
+          <i id="hide-form" class="fas fa-times"></i>
+          <h1>Formulaire de contact</h1>
+          <input id="first-name" type="text" placeholder="Prénom" />
+          <input id="last-name" type="text" placeholder="Nom" />
+          <input id="email" type="email" placeholder="Email" />
+          <input id="subject" type="text" placeholder="Sujet" />
+          <textarea id="message" name="message" rows="8" cols="50">
+         Tapez votre message ici
+        </textarea
+          >
+          <input id="submit" type="submit" value="Envoyer le Message" />
+        </form>
+      </div>
+    </div>
     <footer class="container">
-      <img src="./img/mini-logo.svg" alt="">
-      <p>Fait par billal zernenou @2021 dans le cadre de la formation développeur web et mobile javascript le Réacteur </p>
-      
+      <img src="./img/mini-logo.svg" alt="" />
+      <p>
+        Fait par billal zernenou @2021 dans le cadre de la formation développeur
+        web et mobile javascript le Réacteur
+      </p>
     </footer>
   </body>
 </html>
